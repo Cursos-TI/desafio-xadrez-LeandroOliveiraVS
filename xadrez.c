@@ -7,26 +7,97 @@
 int main() {
     // Nível Novato - Movimentação das Peças
     // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+    int bispoMax = 5;
+    int torreMax = 5;
+    int rainhaMax = 8;
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    int bispoInput;
+    int torreInput;
+    int rainhaInput;
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    // Movimentação do Bispo
+    do
+    {
+        if (i < bispoMax)
+    {
+        printf("Quantas casas o bispo deve andar (max = 5)\n");
+        scanf("%i", &bispoInput);
+        getchar();
+        if (bispoInput <= (bispoMax - i) && bispoInput > 0) {
+            if (i == 0)
+                printf("O Bispo andou %d casas\n", bispoInput);
+            else
+                printf("O Bispo andou mais %d casas\n", bispoInput);
+            i += bispoInput;
+        } else {
+            int restante = bispoMax - i;
+            printf("Voce so pode andar mais %d casas!\n", restante);
+        }
+    } else {
+        printf("Valor máximo de casas atingido! \n");
+    }
+} while (i < bispoMax);
+printf("===========================================\n");
+printf("O bispo andou 5 casas na diagonal superior! \n");
+printf("===========================================\n");
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+i = 0;
+// Movimentação da torre
+do
+{
+    if (i < torreMax)
+    {
+        printf("Quantas casas a torre deve andar (max = 5)\n");
+        scanf("%i", &torreInput);
+        getchar();
+        if (torreInput <= (torreMax - i) && torreInput > 0) {
+            if (i == 0)
+                printf("A Torre andou %d casas\n", torreInput);
+            else
+                printf("A Torre andou mais %d casas\n", torreInput);
+            i += torreInput;
+        } else {
+            int restante = torreMax - i;
+            printf("Voce so pode andar mais %d casas!\n", restante);
+        }
+    } else {
+        printf("Valor máximo de casas atingido! \n");
+    }
+    } while (i < torreMax);
+    printf("===========================================\n");
+    printf("A torre andou 5 casas para a direita! \n");
+    printf("===========================================\n");
+    i = 0;
+    // Movimentação da rainha
+    do
+    {
+        if (i < rainhaMax)
+        {
+            printf("Quantas casas a rainha deve andar (max = 8)\n"); 
+            scanf("%i", &rainhaInput);
+            getchar();
+            if (rainhaInput <= (rainhaMax - i) && rainhaInput > 0){
+                if (i == 0)
+                    {printf("A Rainha andou %d casas\n", rainhaInput);}
+                else {
+                    printf("A Rainha andou mais %d casas\n", rainhaInput);}
+                i += rainhaInput;
+            }else {
+                printf("Voce não pode colocar mais do que %d casas!\n", rainhaMax - i);
+            }
+        }else {printf("Valor máximo de casas atingido! \n");
+        };
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    } while (i < rainhaMax);
+    printf("===========================================\n");
+    printf("A rainha andou 8 casas para a esquerda! \n");
+    printf("===========================================\n");
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
-
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    printf("\n\nPressione ENTER para fechar a janela...");
+    getchar(); 
 
     return 0;
 }
